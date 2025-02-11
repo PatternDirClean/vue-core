@@ -1,4 +1,4 @@
-import { children, next, nextn, template } from '../../src/dom/template'
+import { children, next, template } from '../../src/dom/template'
 
 describe('api: template', () => {
   test('create element', () => {
@@ -36,7 +36,7 @@ describe('api: template', () => {
 
     expect(span).toBe(root.childNodes[0])
     expect(b).toBe(root.childNodes[1])
-    expect(nextn(span, 2)).toBe(root.childNodes[2])
+    expect(children(root, 2)).toBe(root.childNodes[2])
     expect(next(b)).toBe(root.childNodes[2])
   })
 })

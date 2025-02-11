@@ -1,13 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`compiler: children transform > children & sibling references 1`] = `
-"import { child as _child, nextn as _nextn, next as _next, createTextNode as _createTextNode, insert as _insert, setText as _setText, renderEffect as _renderEffect, template as _template } from 'vue';
+"import { child as _child, children as _children, next as _next, createTextNode as _createTextNode, insert as _insert, setText as _setText, renderEffect as _renderEffect, template as _template } from 'vue';
 const t0 = _template("<div><p></p> <!><p></p></div>", true)
 
 export function render(_ctx) {
   const n4 = t0()
   const n0 = _child(n4)
-  const n3 = _nextn(n0, 2)
+  const n3 = _children(n4, 2)
   const n2 = _next(n3)
   const n1 = _createTextNode(() => [_ctx.second, " ", _ctx.third, " "])
   _insert(n1, n4, n3)

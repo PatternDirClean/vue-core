@@ -13,19 +13,8 @@ export function template(html: string, root?: boolean) {
   }
 }
 
-/*! #__NO_SIDE_EFFECTS__ */
-export function children(node: Node, ...paths: number[]): Node {
-  for (const idx of paths) {
-    // In various situations, select the quickest approach.
-    // See https://github.com/vuejs/vue-vapor/pull/263
-    node =
-      idx === 0
-        ? node.firstChild!
-        : idx === 1
-          ? node.firstChild!.nextSibling!
-          : node.childNodes[idx]
-  }
-  return node
+export function children(node: Node, i: number): Node {
+  return node.childNodes[i]
 }
 
 export function child(node: ParentNode): Node {
@@ -34,11 +23,4 @@ export function child(node: ParentNode): Node {
 
 export function next(node: Node): Node {
   return node.nextSibling!
-}
-
-export function nextn(node: Node, offset: number = 1): Node {
-  for (let i = 0; i < offset; i++) {
-    node = node.nextSibling!
-  }
-  return node
 }
